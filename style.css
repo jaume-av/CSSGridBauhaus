@@ -1,0 +1,129 @@
+/* RESET I ESTILS GLOBALS */
+
+/* Elimina marges, farciments i configura el model de caixa consistent */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura l'estil general de la pàgina */
+html, body {
+    font-family: 'Titillium Web', sans-serif; /* Font moderna i llegible */
+    background: #27282f; /* Fons fosc per contrastar amb els colors vius */
+}
+
+/* Configura els títols */
+h1 {
+    font-size: 6rem; /* Mida gran per destacar el títol principal */
+}
+
+/* Configura els paràgrafs */
+p {
+    font-size: 14px; /* Text clar i llegible */
+}
+
+/* CONFIGURACIÓ DE LA GRAELLA */
+
+/* Contenidor principal de la graella */
+#bauhaus {
+    padding: 30px; /* Espai al voltant de la graella */
+    display: grid; /* Activa el mode de graella */
+    grid-template-columns: repeat(6, 1fr); /* Divideix en 6 columnes d'igual amplada */
+    gap: 20px; /* Espai entre els elements de la graella */
+    height: 100vh; /* Alçada del contenidor igual a la finestra del navegador */
+}
+
+/* CONFIGURACIÓ DE LES CAIXES */
+
+/* Estil bàsic per a totes les caixes */
+.bauhaus-box {
+    padding: 30px; /* Farciment intern per a espai dins de les caixes */
+}
+
+/* Posició específica per a la primera caixa */
+.bauhaus-box:nth-of-type(1) {
+    grid-row: 1; /* Situada a la primera fila */
+    grid-column: 1; /* Situada a la primera columna */
+}
+
+/* Posició específica per a la segona caixa */
+.bauhaus-box:nth-of-type(2) {
+    grid-row: 1 / 6; /* Es col·loca des de la fila 1 fins a la fila 6 */
+    grid-column: 2 / 4; /* Ocupa les columnes 2 i 3 */
+}
+
+/* Posició específica per a la tercera caixa */
+.bauhaus-box:nth-of-type(3) {
+    grid-row: 1; /* Situada a la primera fila */
+    grid-column: 4 / 7; /* Ocupa les columnes 4, 5 i 6 */
+}
+
+/* Posició específica per a la quarta caixa */
+.bauhaus-box:nth-of-type(4) {
+    grid-row: 2 / 6; /* Es col·loca des de la fila 2 fins a la fila 6 */
+    grid-column: 1; /* Situada a la primera columna */
+}
+
+/* Posició i estil per a la cinquena caixa */
+.bauhaus-box:nth-of-type(5) {
+    grid-row: 2 / 5; /* Es col·loca des de la fila 2 fins a la fila 5 */
+    grid-column: 4 / 7; /* Ocupa les columnes 4, 5 i 6 */
+    text-align: right; /* Alinea el text a la dreta */
+    padding-left: 200px; /* Afegix farciment addicional a l'esquerra */
+}
+
+/* Estil específic del títol dins de la cinquena caixa */
+.bauhaus-box:nth-of-type(5) h1 {
+    line-height: 1.1em; /* Ajusta l'alçada entre línies */
+    padding-top: 40px; /* Afegix espai a la part superior */
+    padding-bottom: 30px; /* Afegix espai a la part inferior */
+}
+
+/* COLORS ESPECÍFICS PER A LES CAIXES */
+
+/* Caixa amb fons roig */
+.bauhaus-box-red {
+    background: #b93e37;
+}
+
+/* Caixa amb fons blau */
+.bauhaus-box-blue {
+    background: #2952ba;
+}
+
+/* Caixa amb fons groc */
+.bauhaus-box-yellow {
+    background: #d1ac39;
+}
+
+/* Caixa amb fons blanc */
+.bauhaus-box-white {
+    background: #fff;
+}
+
+/* CONFIGURACIÓ RESPONSIVA */
+
+/* Estils per a pantalles més petites */
+@media (max-width: 768px) {
+    /* Reorganitza la graella en una sola columna */
+    #bauhaus {
+        grid-template-columns: 1fr; /* Una columna que ocupa tot l'espai disponible */
+    }
+
+    /* Cada caixa ocupa una fila completa */
+    .bauhaus-box {
+        grid-column: 1; /* Ocupa tota l'amplada de la graella */
+    }
+
+    /* Ajustos específics per a la cinquena caixa en dispositius mòbils */
+    .bauhaus-box:nth-of-type(5) {
+        text-align: center; /* Centra el text */
+        padding: 20px; /* Redueix el farciment */
+    }
+
+    /* Elimina el farciment superior del títol dins de la cinquena caixa */
+    .bauhaus-box:nth-of-type(5) h1 {
+        padding-top: 0;
+    }
+}
